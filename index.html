@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyen Dinh Loc | AI Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -298,45 +298,111 @@
             left: -14px;
         }
         
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            gap: 2rem;
+        /* Projects - Redesigned Section */
+        .projects-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .project-card {
+        .project-item {
+            display: flex;
+            margin-bottom: 5rem;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.4s, box-shadow 0.4s;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        .project-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
         
         .project-image {
-            height: 200px;
-            background-color: var(--primary);
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 3rem;
+        }
+        
+        .project-image i {
+            font-size: 7rem;
+            color: rgba(255, 255, 255, 0.9);
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .project-item:hover .project-image i {
+            transform: scale(1.1) rotate(5deg);
             color: white;
-            font-size: 3rem;
         }
         
         .project-content {
-            padding: 1.5rem;
+            flex: 2;
+            padding: 2.5rem;
         }
         
         .project-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        .project-item:hover .project-title::after {
+            width: 100%;
+        }
+        
+        .project-description {
+            margin-bottom: 1.5rem;
+            color: #444;
+        }
+        
+        .project-tech {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-top: 1.5rem;
+        }
+        
+        .project-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .tech-tag {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: var(--secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .tech-tag:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
         }
         
         /* Skills */
@@ -469,6 +535,16 @@
         }
         
         /* Responsive styles */
+        @media (max-width: 900px) {
+            .project-item, .project-item:nth-child(even) {
+                flex-direction: column;
+            }
+            
+            .project-image {
+                min-height: 250px;
+            }
+        }
+        
         @media (max-width: 768px) {
             .timeline::after {
                 left: 31px;
@@ -594,53 +670,89 @@
         </div>
     </section>
     
-    <!-- Projects Section -->
+    <!-- Projects Section - Redesigned -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-item">
                     <div class="project-image">
                         <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Automated Recruitment System</h3>
-                        <p>Built a sophisticated AI engine processing diverse document formats (email, excel, docx, pdf) with complex layouts to match candidates and jobs at enterprise scale.</p>
-                        <p>Leveraged advanced techniques like fine-tuned LLMs and BERT-based cross/bi-encoders for high-accuracy information extraction and semantic matching. Optimized models through distillation and quantization to achieve sub-second processing on standard hardware.</p>
-                        <p><strong>Technologies:</strong> PyTorch, Transformers, BERT, LLMs, Model Optimization, Distributed Processing</p>
+                        <p class="project-description">Built a sophisticated AI engine processing diverse document formats (email, excel, docx, pdf) with complex layouts to match candidates and jobs at enterprise scale.</p>
+                        <p class="project-description">Leveraged advanced techniques like fine-tuned LLMs and BERT-based cross/bi-encoders for high-accuracy information extraction and semantic matching. Optimized models through distillation and quantization to achieve sub-second processing on standard hardware.</p>
+                        <div class="project-tech">Technologies:</div>
+                        <div class="project-tech-list">
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">BERT</span>
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">Model Optimization</span>
+                            <span class="tech-tag">Distributed Processing</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                
+                <!-- Project 2 -->
+                <div class="project-item">
                     <div class="project-image">
                         <i class="fas fa-robot"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Enterprise Assistant Chatbot</h3>
-                        <p>Developed an intelligent assistant chatbot with a custom RAG pipeline featuring multi-modal and hybrid search capabilities for accurate retrieval from complex documents and web sources.</p>
-                        <p>Created an extensible framework integrating LLMs (OpenAI, Gemini) and tools (web browse, search, code execution) with sophisticated techniques to reduce hallucination and optimize API costs.</p>
-                        <p><strong>Technologies:</strong> LLMs, RAG, Vector Databases, Transformers, API Integration, Prompt Engineering</p>
+                        <p class="project-description">Developed an intelligent assistant chatbot with a custom RAG pipeline featuring multi-modal and hybrid search capabilities for accurate retrieval from complex documents and web sources.</p>
+                        <p class="project-description">Created an extensible framework integrating LLMs (OpenAI, Gemini) and tools (web browse, search, code execution) with sophisticated techniques to reduce hallucination and optimize API costs.</p>
+                        <div class="project-tech">Technologies:</div>
+                        <div class="project-tech-list">
+                            <span class="tech-tag">LLMs</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Vector Databases</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Prompt Engineering</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                
+                <!-- Project 3 -->
+                <div class="project-item">
                     <div class="project-image">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Retail Planogram Recognition System</h3>
-                        <p>Built a robust computer vision system tackling the challenge of identifying thousands of SKUs and verifying placements on chaotic and densely packed retail shelves.</p>
-                        <p>Developed specialized CNNs that recognized product placements with high accuracy in unstructured environments, providing retailers with actionable compliance insights.</p>
-                        <p><strong>Technologies:</strong> Computer Vision, CNNs, Object Detection, OpenCV, TensorFlow</p>
+                        <p class="project-description">Built a robust computer vision system tackling the challenge of identifying thousands of SKUs and verifying placements on chaotic and densely packed retail shelves.</p>
+                        <p class="project-description">Developed specialized CNNs that recognized product placements with high accuracy in unstructured environments, providing retailers with actionable compliance insights.</p>
+                        <div class="project-tech">Technologies:</div>
+                        <div class="project-tech-list">
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">CNNs</span>
+                            <span class="tech-tag">Object Detection</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
+                
+                <!-- Project 4 -->
+                <div class="project-item">
                     <div class="project-image">
                         <i class="fas fa-user-tie"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">AI-Powered Interview Analysis</h3>
-                        <p>Created a groundbreaking system that analyzes recorded interviews using multimodal AI, evaluating verbal responses, facial expressions, and body language against job requirements.</p>
-                        <p>The system provides comprehensive candidate assessments with actionable insights for hiring managers, dramatically reducing screening time and improving hiring quality.</p>
-                        <p><strong>Technologies:</strong> Multimodal Deep Learning, NLP, Computer Vision, Emotion Analysis</p>
+                        <p class="project-description">Created a groundbreaking system that analyzes recorded interviews using multimodal AI, evaluating verbal responses, facial expressions, and body language against job requirements.</p>
+                        <p class="project-description">The system provides comprehensive candidate assessments with actionable insights for hiring managers, dramatically reducing screening time and improving hiring quality.</p>
+                        <div class="project-tech">Technologies:</div>
+                        <div class="project-tech-list">
+                            <span class="tech-tag">Multimodal Deep Learning</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Emotion Analysis</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -693,7 +805,7 @@
     </section>
     
     <!-- Contact Section -->
-    <section id="contact" style="background-color: white;">
+    <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
@@ -749,20 +861,18 @@
             let scrollPosition = window.scrollY;
             
             document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
+                let sectionTop = section.offsetTop - 50;
+                let sectionHeight = section.offsetHeight;
                 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     document.querySelectorAll('.nav-link').forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + sectionId) {
-                            link.classList.add('active');
-                        }
                     });
+                    document.querySelector(`a[href="#${section.id}"]`).classList.add('active');
                 }
             });
         });
     </script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
