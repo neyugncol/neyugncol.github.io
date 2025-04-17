@@ -3,876 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Dinh Loc | AI Engineer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a252f;
-            --text: #333;
-            --spacing: 3rem;
-            --container: 1200px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
-        }
-        
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            margin-top: 2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.5rem;
-            width: 100%;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-        
-        p {
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        a:hover {
-            color: var(--accent);
-        }
-        
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background-color: var(--secondary);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s;
-            margin-right: 1rem;
-            margin-bottom: 1rem;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 2rem 0;
-            position: relative;
-        }
-        
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .header-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .header-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--light);
-            font-weight: 300;
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: var(--dark);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            padding: 1rem 0;
-        }
-        
-        .nav-link {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-        
-        .nav-link:hover {
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-        
-        /* Sections */
-        section {
-            padding: var(--spacing) 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        /* About */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .about-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-text {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .highlight {
-            font-weight: 700;
-            color: var(--secondary);
-        }
-        
-        /* Experience */
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: linear-gradient(to bottom, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.2));
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 60px;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            background-color: white;
-            border: 4px solid var(--secondary);
-            border-radius: 50%;
-            top: 25px;
-            z-index: 1;
-            box-shadow: 0 0 0 6px rgba(52, 152, 219, 0.15);
-            transition: all 0.3s ease;
-        }
-        
-        .timeline-item:hover::after {
-            background-color: var(--secondary);
-            transform: scale(1.2);
-        }
-        
-        .timeline-content {
-            position: relative;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-            padding-bottom: 10px;
-        }
-        
-        .timeline-item:hover .timeline-content {
-            transform: translateY(-5px);
-            /* border-left-color: var(--secondary); */
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .timeline-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.4rem;
-            color: var(--primary);
-        }
-        
-        .timeline-company {
-            font-style: italic;
-            color: #555;
-            margin-bottom: 1rem;
-        }
-        
-        .timeline-description {
-            line-height: 1.6;
-            margin-top: 1rem;
-            color: #444;
-        }
-        
-        .left {
-            left: 0;
-            text-align: right;
-        }
-        
-        .right {
-            left: 50%;
-            text-align: left;
-        }
-        
-        .left::after {
-            right: -14px;
-        }
-        
-        .right::after {
-            left: -14px;
-        }
-        
-        /* Projects - Redesigned Section */
-        .projects-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .project-item {
-            display: flex;
-            margin-bottom: 5rem;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-            transition: transform 0.4s, box-shadow 0.4s;
-        }
-        
-        .project-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .project-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .project-image {
-            flex: 1;
-            min-width: 300px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
-        }
-        
-        .project-image i {
-            font-size: 7rem;
-            color: rgba(255, 255, 255, 0.9);
-            transition: transform 0.3s, color 0.3s;
-        }
-        
-        .project-item:hover .project-image i {
-            transform: scale(1.1) rotate(5deg);
-            color: white;
-        }
-        
-        .project-content {
-            flex: 2;
-            padding: 2.5rem;
-        }
-        
-        .project-title {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .project-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -0.5rem;
-            width: 60px;
-            height: 3px;
-            background-color: var(--secondary);
-            transition: width 0.3s;
-        }
-        
-        .project-item:hover .project-title::after {
-            width: 100%;
-        }
-        
-        .project-description {
-            margin-bottom: 1.5rem;
-            color: #444;
-        }
-        
-        .project-tech {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-top: 1.5rem;
-        }
-        
-        .project-tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .tech-tag {
-            background-color: rgba(52, 152, 219, 0.1);
-            color: var(--secondary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-        
-        .tech-tag:hover {
-            background-color: var(--secondary);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* Skills */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .skills-category {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .skills-list {
-            list-style: none;
-        }
-        
-        .skills-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .skills-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-        }
-        
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        
-        .testimonial-author {
-            font-weight: 700;
-        }
-        
-        .testimonial-role {
-            color: var(--secondary);
-        }
-        
-        .quote-icon {
-            font-size: 2rem;
-            color: rgba(0, 0, 0, 0.05);
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-        }
-        
-        /* Contact */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-list {
-            list-style: none;
-        }
-        
-        .contact-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .contact-icon {
-            margin-right: 1rem;
-            color: var(--secondary);
-            width: 20px;
-            text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
-        .footer-text {
-            margin-bottom: 1rem;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 900px) {
-            .project-item, .project-item:nth-child(even) {
-                flex-direction: column;
-            }
-            
-            .project-image {
-                min-height: 250px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 20px;
-            }
-            
-            .left, .right {
-                left: 0;
-                text-align: left;
-            }
-            
-            .left::after, .right::after {
-                left: 20px;
-            }
-            
-            .timeline-highlights {
-                padding-left: 0;
-            }
-            
-            .timeline-highlights li {
-                padding-left: 1.5rem;
-            }
-        }
-    </style>
+    <title>Nguyen Dinh Loc | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <h1 class="header-title">Nguyen Dinh Loc</h1>
-            <p class="header-subtitle">Lead AI Engineer | Machine Learning Specialist | Problem Solver</p>
-            <div>
-                <a href="#contact" class="btn">Get in Touch</a>
-                <a href="#projects" class="btn">View My Work</a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </div>
-    </nav>
-    
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="/api/placeholder/300/300" alt="Nguyen Dinh Loc">
-                </div>
-                <div class="about-text">
-                    <p>Hello! I'm <span class="highlight">Nguyen Dinh Loc</span>, a passionate Lead AI Engineer with 6+ years of experience driving innovation at the intersection of artificial intelligence and business transformation.</p>
-                    
-                    <p>My journey in AI began with a deep fascination for how intelligent systems can solve complex real-world problems. This led me to pursue a Bachelor's degree in Information Technology with a specialization in Artificial Intelligence from Ho Chi Minh University of Technology and Education.</p>
-                    
-                    <p>What sets me apart is my <span class="highlight">relentless curiosity</span> and drive to master emerging technologies. I thrive on tackling challenging problems that require creative thinking and innovative approaches. My technical expertise spans the full AI spectrum—from deep learning and computer vision to natural language processing and the latest advances in generative AI.</p>
-                    
-                    <p>Beyond technical skills, I'm a <span class="highlight">strategic thinker and team leader</span> who can translate complex business needs into elegant AI solutions. I've successfully led teams in developing AI systems that have automated 70% of recruitment processes and increased sales by 67%.</p>
-                    
-                    <p>When I'm not architecting AI systems, you'll find me exploring research papers, experimenting with the latest ML frameworks, and mentoring upcoming AI engineers. I believe in the transformative power of AI and am committed to developing ethical, efficient, and innovative solutions that drive real business value.</p>
-                    
-                    <p>Let's connect and explore how we can leverage AI to solve your most pressing challenges!</p>
+    <div class="max-w-6xl m-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- Profile Section -->
+        <div class="md:sticky md:top-8 md:self-start rounded-lg border shadow-sm p-6">
+            <div class="flex flex-row md:flex-col items-center md:items-start w-full gap-4">
+                <div class="rounded-full bg-gray-300 size-12 md:w-full md:h-auto aspect-square border-2"></div>
+                <div class="flex flex-col items-start justify-center">
+                    <h1 class="md:mt-4 text-xl font-bold">Nguyen Dinh Loc</h1>
+                    <p class="text-sm md:text-base text-gray-500">Lead AI Engineer</p>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Experience Section -->
-    <section id="experience" style="background-color: white;">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2022 - Present</div>
-                        <div class="timeline-title">Lead AI Engineer</div>
-                        <div class="timeline-company">Jilnesta - SES & Recruitment SaaS Platform</div>
-                        <p class="timeline-description">
-                            Leading AI development that automated 70% of recruitment processes, architecting scalable systems 
-                            processing 100K+ transactions daily, and developing advanced RAG chatbots with generative AI.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2020 - 2021</div>
-                        <div class="timeline-title">AI Engineer</div>
-                        <div class="timeline-company">WAO - Blockchain Technology</div>
-                        <p class="timeline-description">
-                            Developed secure KYC verification with face recognition and liveness detection, created privacy technologies 
-                            reducing false positives, and built intelligent customer support systems.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2019 - 2020</div>
-                        <div class="timeline-title">AI Engineer</div>
-                        <div class="timeline-company">Logix Technology - Retail Solutions</div>
-                        <p class="timeline-description">
-                            Developed retail analytics using computer vision, built planogram recognition systems with 80%+ accuracy, 
-                            and engineered product recognition across thousands of SKUs.
-                        </p>
-                    </div>
-                </div>
+            <p class="mt-2 text-start text-sm text-gray-500">I am a passionate AI engineer with a focus on developing innovative solutions that leverage the power of artificial intelligence.</p>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-gray-900 h-10 px-4 py-2 mt-4 w-full font-semibold">CONTACT ME</button>
+            <div class="mt-4 flex flex-col space-y-2 border-t border-r-border pt-4 w-full">
+                <a target="_blank" aria-label="Email Logo" class="cursor-pointer flex items-center gap-2 group" href="mailto:ndloc867@gmail.com">
+                    <i class="fa-solid fa-envelope text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear"></i>
+                    <p class="text-sm text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear">ndloc867@gmail.com</p>                    
+                </a>
+                <a target="_blank" aria-label="LinkedIn Logo" class="cursor-pointer flex items-center gap-2 group" href="https://www.linkedin.com/in/ndloc867/">
+                    <i class="fa-brands fa-linkedin text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear"></i>
+                    <p class="text-sm text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear">/in/ndloc867</p>
+                </a>
+                <a target="_blank" aria-label="Location Logo" class="cursor-pointer flex items-center gap-2 group" href="https://maps.google.com/?q=Ho+Chi+Minh+City,+Vietnam">
+                    <i class="fa-solid fa-location-dot text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear"></i>
+                    <p class="text-sm text-gray-500 group-hover:text-black transition-colors duration-200 ease-linear">Ho Chi Minh City, Vietnam</p>
+                </a>
             </div>
         </div>
-    </section>
-    
-    <!-- Projects Section - Redesigned -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-container">
-                <!-- Project 1 -->
-                <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Automated Recruitment System</h3>
-                        <p class="project-description">Built a sophisticated AI engine processing diverse document formats (email, excel, docx, pdf) with complex layouts to match candidates and jobs at enterprise scale.</p>
-                        <p class="project-description">Leveraged advanced techniques like fine-tuned LLMs and BERT-based cross/bi-encoders for high-accuracy information extraction and semantic matching. Optimized models through distillation and quantization to achieve sub-second processing on standard hardware.</p>
-                        <div class="project-tech">Technologies:</div>
-                        <div class="project-tech-list">
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">Transformers</span>
-                            <span class="tech-tag">BERT</span>
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">Model Optimization</span>
-                            <span class="tech-tag">Distributed Processing</span>
+
+        <!-- Main Content -->
+        <div class="md:col-span-3">
+            <!-- About Section -->
+            <div class="rounded-lg border shadow-sm p-6 mb-6">
+                <h1 class="mb-6 text-2xl font-bold">About Me</h1>
+                <p class="text-gray-500">
+                    I have a strong background in machine learning, data analysis, and software development. I am dedicated to continuous learning and staying updated with the latest advancements in AI technology.
+                    <br>
+                    <br>
+                    My goal is to create AI solutions that are not only effective but also ethical and responsible.
+                    <br>
+                    <br>
+                    In my free time, I enjoy reading about AI advancements, participating in hackathons, and contributing to open-source projects.
+                </p>
+            </div>
+
+            <!-- Projects Section -->
+            <h1 class="mb-4 text-xl font-bold">Featured Projects</h1>
+            <div class="grid grid-cols-1 gap-4">
+                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
+                    <div class="rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
+                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
+                        <h2 class="font-semibold">AI-Powered Chatbot</h2>
+                        <p class="text-sm text-gray-500 mt-1">Developed a chatbot using natural language processing techniques to assist users in finding information quickly.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-brands fa-python text-blue-500"></i> Python
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-solid fa-brain text-purple-500"></i> NLP
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-brands fa-aws text-orange-500"></i> AWS
+                            </span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
-                <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Enterprise Assistant Chatbot</h3>
-                        <p class="project-description">Developed an intelligent assistant chatbot with a custom RAG pipeline featuring multi-modal and hybrid search capabilities for accurate retrieval from complex documents and web sources.</p>
-                        <p class="project-description">Created an extensible framework integrating LLMs (OpenAI, Gemini) and tools (web browse, search, code execution) with sophisticated techniques to reduce hallucination and optimize API costs.</p>
-                        <div class="project-tech">Technologies:</div>
-                        <div class="project-tech-list">
-                            <span class="tech-tag">LLMs</span>
-                            <span class="tech-tag">RAG</span>
-                            <span class="tech-tag">Vector Databases</span>
-                            <span class="tech-tag">Transformers</span>
-                            <span class="tech-tag">API Integration</span>
-                            <span class="tech-tag">Prompt Engineering</span>
+                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
+                    <div class="md:order-last rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-br-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
+                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
+                        <h2 class="font-semibold">Image Classification Model</h2>
+                        <p class="text-sm text-gray-500 mt-1">Created a deep learning model for image classification using TensorFlow and Keras.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-brands fa-python text-blue-500"></i> Python
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-solid fa-image text-green-500"></i> Computer Vision
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-brands fa-tensorflow text-red-500"></i> TensorFlow
+                            </span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
-                <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Retail Planogram Recognition System</h3>
-                        <p class="project-description">Built a robust computer vision system tackling the challenge of identifying thousands of SKUs and verifying placements on chaotic and densely packed retail shelves.</p>
-                        <p class="project-description">Developed specialized CNNs that recognized product placements with high accuracy in unstructured environments, providing retailers with actionable compliance insights.</p>
-                        <div class="project-tech">Technologies:</div>
-                        <div class="project-tech-list">
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">CNNs</span>
-                            <span class="tech-tag">Object Detection</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">TensorFlow</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-item">
-                    <div class="project-image">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">AI-Powered Interview Analysis</h3>
-                        <p class="project-description">Created a groundbreaking system that analyzes recorded interviews using multimodal AI, evaluating verbal responses, facial expressions, and body language against job requirements.</p>
-                        <p class="project-description">The system provides comprehensive candidate assessments with actionable insights for hiring managers, dramatically reducing screening time and improving hiring quality.</p>
-                        <div class="project-tech">Technologies:</div>
-                        <div class="project-tech-list">
-                            <span class="tech-tag">Multimodal Deep Learning</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">Emotion Analysis</span>
+                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
+                    <div class="rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
+                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
+                        <h2 class="font-semibold">Predictive Analytics Dashboard</h2>
+                        <p class="text-sm text-gray-500 mt-1">Built an interactive dashboard for visualizing predictive analytics results using Tableau.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-solid fa-chart-line text-green-500"></i> Data Visualization
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                                <i class="fa-brands fa-tableau text-blue-500"></i> Tableau
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills" style="background-color: white;">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>AI & Machine Learning</h3>
-                    <ul class="skills-list">
-                        <li>Deep Learning Architecture Design & Implementation</li>
-                        <li>Computer Vision (Object Detection, Recognition)</li>
-                        <li>Natural Language Processing & Understanding</li>
-                        <li>Generative AI (LLMs, RAG, Transformers)</li>
-                        <li>Model Optimization (Distillation, Quantization)</li>
-                        <li>Transfer Learning & Fine-tuning</li>
-                        <li>Multimodal AI Systems</li>
+
+            <!-- Skills Section -->
+            <h1 class="mb-4 mt-8 text-xl font-bold">Core Competencies</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rounded-lg border shadow-sm p-6">
+                    <h2 class="font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-brain text-blue-500"></i> AI / ML Specializations
+                    </h2>
+                    <ul class="mt-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Computer Vision</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Natural Language Processing</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Reinforcement Learning</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Generative Models</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Deep Learning</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Data Analysis</span></li>
                     </ul>
                 </div>
-                <div class="skills-category">
-                    <h3>Frameworks & Tools</h3>
-                    <ul class="skills-list">
-                        <li>PyTorch, TensorFlow, Keras</li>
-                        <li>Huggingface (Transformers, TRL)</li>
-                        <li>OpenCV, Scikit-learn, Numpy</li>
-                        <li>Spacy, ONNX, Unsloth</li>
-                        <li>Google Cloud Platform (GCP)</li>
-                        <li>Docker, FastAPI, Celery</li>
-                        <li>Vector Databases (Weaviate, Qdrant)</li>
+                <div class="rounded-lg border shadow-sm p-6">
+                    <h2 class="font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-code text-blue-500"></i> Languages, Frameworks & Libraries
+                    </h2>
+                    <ul class="mt-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Python (Expert)</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">JavaScript, C++, C# (Familiar)</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">PyTorch, TensorFlow, Keras</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Hugging Face (Transformers, TRL)</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">OpenCV, Scikit-learn, SpaCy</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">NumPy, Pandas, Matplotlib</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Onnx, Unsloth</span></li>
                     </ul>
                 </div>
-                <div class="skills-category">
-                    <h3>Leadership & Soft Skills</h3>
-                    <ul class="skills-list">
-                        <li>Technical Team Leadership</li>
-                        <li>Strategic AI Planning & Implementation</li>
-                        <li>Cross-functional Collaboration</li>
-                        <li>Stakeholder Communication</li>
-                        <li>Problem-solving & Critical Thinking</li>
-                        <li>Mentoring & Knowledge Transfer</li>
-                        <li>Project Management & Planning</li>
+                <div class="rounded-lg border shadow-sm p-6">
+                    <h2 class="font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-cogs text-blue-500"></i> MLOps & Infrastructure
+                    </h2>
+                    <ul class="mt-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Docker, Kubernetes</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">AWS (S3, EC2, Lambda)</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Google Cloud Platform</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">CI/CD Pipelines</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Model Deployment</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Monitoring & Logging</span></li>
+                    </ul>
+                </div>
+                <div class="rounded-lg border shadow-sm p-6">
+                    <h2 class="font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-users text-blue-500"></i> Approach & Leadership
+                    </h2>
+                    <ul class="mt-2 text-gray-500">
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Agile Methodologies</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Team Leadership</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Project Management</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Mentoring & Coaching</span></li>
+                        <li><i class="fa-solid fa-check text-green-500"></i><span class="ml-2">Problem Solving</span></li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>I'm always open to discussing new projects, innovative ideas, or opportunities to be part of your vision. Feel free to reach out to me using any of the following contact methods.</p>
-                    <ul class="contact-list">
-                        <li>
-                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                            <a href="mailto:ndloc867@gmail.com">ndloc867@gmail.com</a>
-                        </li>
-                        <li>
-                            <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
-                            <a href="https://www.linkedin.com/in/ndloc867" target="_blank">linkedin.com/in/ndloc867</a>
-                        </li>
-                        <li>
-                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <span>Ho Chi Minh City, Viet Nam</span>
-                        </li>
-                    </ul>
-                    <!-- <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
-                    </div> -->
-                </div>
+
+            <!-- Work Experience -->
+            <h1 class="mb-4 mt-8 text-xl font-bold">Work Experience</h1>
+            <div class="rounded-lg border shadow-sm p-6 mb-6">
+                <ul class="space-y-8">
+                    <li class="border-b last:border-b-0 pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-gray-200 w-10 h-10 border rounded-md shadow-md">
+                                <img src="https://media.licdn.com/dms/image/v2/C560BAQGFcsqMUZIteA/company-logo_200_200/company-logo_200_200/0/1630649312092?e=1750291200&v=beta&t=gTuiNL0yFaNwTUgAHPuH2RrdGFbhNqTV_AkSTw80ysw" alt="Company Logo" class="rounded-md" />
+                            </div>
+                            <div>
+                                <h2 class="font-semibold">Lead AI Engineer</h2>
+                                <p class="text-sm text-gray-500 mt-1">XYZ Company, Ho Chi Minh City, Vietnam</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2022 - Present</span></p>
+                        <p class="text-sm text-gray-500 mt-2">Leading a team of AI engineers to develop and implement machine learning models for various applications.</p>
+                        <ul class="mt-2 text-gray-500 list-disc list-inside">
+                            <li>Designed and deployed a scalable AI model for real-time data processing.</li>
+                            <li>Collaborated with cross-functional teams to integrate AI solutions into existing systems.</li>
+                            <li>Mentored junior engineers and interns in AI best practices.</li>
+                        </ul>
+                    </li>
+                    <li class="border-b last:border-b-0 pb-4">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-gray-200 w-10 h-10 border rounded-md shadow-md">
+                                <img src="https://media.licdn.com/dms/image/v2/C510BAQEyeXNn9nnd8A/company-logo_200_200/company-logo_200_200/0/1631433185019/wao_studio_logo?e=1750291200&v=beta&t=PV6cUuZ39COeWDLDEzNV2jpum-hqnq7nlNNlTkeG0A8" alt="Company Logo" class="rounded-md" />
+                            </div>
+                            <div>
+                                <h2 class="font-semibold">AI Engineer</h2>
+                                <p class="text-sm text-gray-500 mt-1">ABC Tech, Ho Chi Minh City, Vietnam</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2020 - 2022</span></p>
+                        <p class="text-sm text-gray-500 mt-2">Developed machine learning models for predictive analytics and data mining.</p>
+                        <ul class="mt-2 text-gray-500 list-disc list-inside">
+                            <li>Implemented a recommendation system that improved user engagement by 30%.</li>
+                            <li>Conducted data analysis and visualization to support business decisions.</li>
+                            <li>Participated in code reviews and contributed to the development of best practices.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 p-1 border rounded-md shadow-md">
+                                <img src="https://www.logixtek.com/wp-content/uploads/2024/03/cropped-flaticon-192x192.png" alt="Company Logo" class="rounded-md" />
+                            </div>
+                            <div>
+                                <h2 class="font-semibold">Data Scientist Intern</h2>
+                                <p class="text-sm text-gray-500 mt-1">Tech Startups, Ho Chi Minh City, Vietnam</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2019 - 2020</span></p>
+                        <p class="text-sm text-gray-500 mt-2">Assisted in data collection, cleaning, and analysis for various projects.</p>
+                        <ul class="mt-2 text-gray-500 list-disc list-inside">
+                            <li>Worked with senior data scientists to develop machine learning models.</li>
+                            <li>Participated in team meetings and contributed to project discussions.</li>
+                            <li>Learned about data visualization tools and techniques.</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p class="footer-text">© 2025 Nguyen Dinh Loc. All Rights Reserved.</p>
-            <p>Designed and built with passion and precision.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="border-t pt-6 pb-6 bg-gray-50 w-full mt-12">
+        <div class="max-w-6xl m-auto px-4 text-center">
+            <p class="text-sm text-gray-500">&copy; 2025 Nguyen Dinh Loc. All rights reserved.</p>
+            <p class="text-sm text-gray-500 mt-2">Creating innovative AI solutions for a better tomorrow.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Add active class to nav links on scroll
-        window.addEventListener('scroll', function() {
-            let scrollPosition = window.scrollY;
-            
-            document.querySelectorAll('section').forEach(section => {
-                let sectionTop = section.offsetTop - 50;
-                let sectionHeight = section.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    document.querySelector(`a[href="#${section.id}"]`).classList.add('active');
-                }
-            });
-        });
-    </script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
