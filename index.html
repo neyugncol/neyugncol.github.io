@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nguyen Dinh Loc | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <div class="max-w-6xl m-auto px-4 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+<body class="pl-[calc(100vw-100%)]">
+    <div class="max-w-6xl m-auto px-4 py-8  grid grid-cols-1 md:grid-cols-4 gap-6">
         <!-- Profile Section -->
         <div class="md:sticky md:top-8 md:self-start rounded-lg border shadow-sm p-6">
             <div class="flex flex-row md:flex-col items-center md:items-start w-full gap-4">
-                <div class="rounded-full bg-gray-300 size-12 md:w-full md:h-auto aspect-square border-2"></div>
+                <img src="https://placehold.co/200x200" alt="Profile Picture" class="rounded-full size-12 md:w-full md:h-auto border-2 object-cover" />
                 <div class="flex flex-col items-start justify-center">
                     <h1 class="md:mt-4 text-xl font-bold">Nguyen Dinh Loc</h1>
                     <p class="text-sm md:text-base text-gray-500">Lead AI Engineer</p>
@@ -55,55 +54,88 @@
             <!-- Projects Section -->
             <h1 class="mb-4 text-xl font-bold">Featured Projects</h1>
             <div class="grid grid-cols-1 gap-4">
-                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
-                    <div class="rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
-                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
-                        <h2 class="font-semibold">AI-Powered Chatbot</h2>
-                        <p class="text-sm text-gray-500 mt-1">Developed a chatbot using natural language processing techniques to assist users in finding information quickly.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-brands fa-python text-blue-500"></i> Python
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-solid fa-brain text-purple-500"></i> NLP
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-brands fa-aws text-orange-500"></i> AWS
-                            </span>
-                        </div>
+                <div class="rounded-lg border shadow-sm flex flex-col justify-between w-full p-6">
+                    <h2 class="font-semibold">AI-Powered Chatbot</h2>
+                    <p class="text-sm text-gray-500 mt-1">Groot, Inc</p>
+                    <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2022 - Present</span></p>
+                    <p class="text-sm text-gray-500 mt-2">Developed a chatbot using natural language processing techniques to assist users in finding information quickly.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-python text-blue-500"></i> Python
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-solid fa-brain text-purple-500"></i> NLP
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-aws text-orange-500"></i> AWS
+                        </span>
+                    </div>
+                    <div class="mt-4 flex gap-2 overflow-x-auto pb-2 w-full h-32">
+                        <img src="https://placehold.co/4800x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
                     </div>
                 </div>
-                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
-                    <div class="md:order-last rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-br-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
-                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
-                        <h2 class="font-semibold">Image Classification Model</h2>
-                        <p class="text-sm text-gray-500 mt-1">Created a deep learning model for image classification using TensorFlow and Keras.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-brands fa-python text-blue-500"></i> Python
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-solid fa-image text-green-500"></i> Computer Vision
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-brands fa-tensorflow text-red-500"></i> TensorFlow
-                            </span>
-                        </div>
+                <div class="rounded-lg border shadow-sm flex flex-col justify-between w-full p-6">
+                    <h2 class="font-semibold">Image Classification System</h2>
+                    <p class="text-sm text-gray-500 mt-1">Groot, Inc</p>
+                    <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2022 - Present</span></p>
+                    <p class="text-sm text-gray-500 mt-2">Created an image classification system using deep learning techniques to categorize images into different classes.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-python text-blue-500"></i> Python
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-solid fa-brain text-purple-500"></i> Deep Learning
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-tensorflow text-red-500"></i> TensorFlow
+                        </span>
+                    </div>
+                    <div class="mt-4 flex gap-2 overflow-x-auto pb-2 w-full h-32">
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
                     </div>
                 </div>
-                <div class="rounded-lg border shadow-sm flex flex-col md:flex-row items-start">
-                    <div class="rounded-tl-lg rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg bg-gray-300 w-full md:w-1/3 h-48"></div>
-                    <div class="flex flex-col justify-between w-full md:w-2/3 p-6">
-                        <h2 class="font-semibold">Predictive Analytics Dashboard</h2>
-                        <p class="text-sm text-gray-500 mt-1">Built an interactive dashboard for visualizing predictive analytics results using Tableau.</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-solid fa-chart-line text-green-500"></i> Data Visualization
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
-                                <i class="fa-brands fa-tableau text-blue-500"></i> Tableau
-                            </span>
-                        </div>
+                <div class="rounded-lg border shadow-sm flex flex-col justify-between w-full p-6">
+                    <h2 class="font-semibold">Real-Time Object Detection</h2>
+                    <p class="text-sm text-gray-500 mt-1">Groot, Inc</p>
+                    <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2022 - Present</span></p>
+                    <p class="text-sm text-gray-500 mt-2">Implemented a real-time object detection system using computer vision techniques to identify and track objects in video streams.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-python text-blue-500"></i> Python
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-solid fa-brain text-purple-500"></i> Computer Vision
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-opencv text-blue-500"></i> OpenCV
+                        </span>
+                    </div>
+                    <div class="mt-4 flex gap-2 overflow-x-auto pb-2 w-full h-32">
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
+                    </div>
+                </div>
+                <div class="rounded-lg border shadow-sm flex flex-col justify-between w-full p-6">
+                    <h2 class="font-semibold">Sentiment Analysis Tool</h2>
+                    <p class="text-sm text-gray-500 mt-1">Groot, Inc</p>
+                    <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-calendar-days text-gray-500"></i> <span class="ml-1">2022 - Present</span></p>
+                    <p class="text-sm text-gray-500 mt-2">Developed a sentiment analysis tool to analyze user feedback and reviews using natural language processing techniques.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-python text-blue-500"></i> Python
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-solid fa-brain text-purple-500"></i> NLP
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-3 py-1 text-sm font-medium bg-gray-100 text-gray-600 rounded-full">
+                            <i class="fa-brands fa-nltk text-green-500"></i> NLTK
+                        </span>
+                    </div>
+                    <div class="mt-4 flex gap-2 overflow-x-auto pb-2 w-full h-32">
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
+                        <img src="https://placehold.co/480x270" alt="Project Image" class="cursor-pointer border rounded-md h-full w-auto object-cover" />
                     </div>
                 </div>
             </div>
@@ -235,5 +267,97 @@
             <p class="text-sm text-gray-500 mt-2">Creating innovative AI solutions for a better tomorrow.</p>
         </div>
     </footer>
+
+    <!-- Project Image Popup -->
+    <div id="image-popup-overlay" class="fixed inset-0 bg-black bg-opacity-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-all duration-100 ease-in-out">
+        <div class="bg-white rounded-lg p-6 mx-4 shadow-xl transform scale-95 transition-all duration-100">
+            <button id="close-popup" class="text-gray-500 hover:text-gray-800 transition-colors duration-100 absolute top-2 right-3">
+                <span class="sr-only">Close</span>
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <h2 id="popup-project-title" class="font-semibold"></h2>
+            <p id="popup-project-info" class="text-sm text-gray-500 mt-1"></p>
+            <div class="mt-4 flex justify-center max-w-[70vh] max-h-[70vh]">
+                <img id="popup-image" src="" alt="Project Image" class="object-contain rounded-md border" />
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all project images that should trigger the popup
+            const projectImages = document.querySelectorAll('.grid-cols-1.gap-4 .rounded-lg img');
+            const overlay = document.getElementById('image-popup-overlay');
+            const popupImage = document.getElementById('popup-image');
+            const popupTitle = document.getElementById('popup-project-title');
+            const popupInfo = document.getElementById('popup-project-info');
+            const closeButton = document.getElementById('close-popup');
+
+            // Function to open popup
+            function openPopup(imgSrc, projectTitle, projectCompany, projectDate) {
+                popupImage.src = imgSrc;
+                popupTitle.textContent = projectTitle;
+                popupInfo.textContent = `${projectCompany} - ${projectDate}`;
+                
+                // Show popup with animation
+                overlay.classList.remove('opacity-0', 'pointer-events-none', 'bg-opacity-0');
+                overlay.classList.add('opacity-100', 'bg-opacity-70');
+                
+                // Scale up the popup card
+                overlay.querySelector('div').classList.remove('scale-95');
+                overlay.querySelector('div').classList.add('scale-100');
+                
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Function to close popup
+            function closePopup() {
+                // Hide popup with animation
+                overlay.classList.remove('opacity-100', 'bg-opacity-70');
+                overlay.classList.add('opacity-0', 'bg-opacity-0', 'pointer-events-none');
+                
+                // Scale down the popup card
+                overlay.querySelector('div').classList.remove('scale-100');
+                overlay.querySelector('div').classList.add('scale-95');
+                
+                // Re-enable body scrolling
+                document.body.style.overflow = '';
+            }
+
+            // Add click event to all project images
+            projectImages.forEach(img => {
+                img.classList.add('cursor-pointer', 'hover:opacity-90', 'transition-opacity');
+                img.addEventListener('click', function() {
+                    // Find project details from the parent card
+                    const projectCard = this.closest('.rounded-lg.border');
+                    const projectTitle = projectCard.querySelector('h2').textContent;
+                    const projectCompany = projectCard.querySelector('p.text-sm.text-gray-500').textContent;
+                    const projectDate = projectCard.querySelector('p.text-xs .ml-1').textContent;
+                    
+                    openPopup(this.src, projectTitle, projectCompany, projectDate);
+                });
+            });
+
+            // Close popup when clicking the close button
+            closeButton.addEventListener('click', closePopup);
+
+            // Close popup when clicking outside the popup content
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closePopup();
+                }
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && overlay.classList.contains('opacity-100')) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
